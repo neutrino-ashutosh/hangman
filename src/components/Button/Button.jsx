@@ -1,9 +1,11 @@
-function Button({text, onClickHandler}) {
+import getButtonStyling from "./getButtonStyling.js";
+function Button({text, onClickHandler, styleType = "primary", type = "button"}) {
 
     return (
         <button
             onClick={onClickHandler}
-            className= "text-white bg-blue-500"
+            type={type}
+            className= {`px-4 py-2 rounded ${getButtonStyling(styleType)} text-white `}
         >
             {text}
         </button>

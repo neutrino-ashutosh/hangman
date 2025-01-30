@@ -8,12 +8,11 @@ function TextInputFormContainer() {
     const [value, setValue] = useState("");
     const navigate = useNavigate(); //useNavigate is a hook that returns a navigate function
 
-
     function handleFormSubmit(event){
         event.preventDefault();
         console.log("form submitted", value);
         if(value){
-            navigate("/play")
+            navigate("/play",{state:{word : value}});
         }
     }
 

@@ -1,5 +1,4 @@
 import TextInputFormContainer from "../components/TextInputForm/TextInputFormContainer";
-
 function StartGame(){
 
     return (

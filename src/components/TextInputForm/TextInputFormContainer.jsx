@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {  useState } from "react";
 import TextInputForm from "./TextInputForm";
 import { useNavigate } from "react-router-dom";
 
@@ -32,13 +32,28 @@ function TextInputFormContainer() {
     }
 
     return (
+        <>   
         <TextInputForm 
             inputType={inputType}
             handleFormSubmit={handleFormSubmit} 
             handleTextInputChange={handleTextInputChange}
             handleShowHideClick={handleShowHideClick}
         /> 
+        {/* { (inputType === "password") ? <Temp/> : null} */}
+        </>
     );
 }
+
+// function Temp(){
+//     useEffect(() => {
+//         console.log("Temp component first load");
+
+//         return () => {
+//             console.log("Temp component unmount");}
+//     }, [])
+
+//     return (<div> Temp </div>)
+// }
+// demonstration of useEffect , need to import useEffect whenever you will use it 
 
 export default TextInputFormContainer ;      

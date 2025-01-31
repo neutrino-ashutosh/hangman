@@ -11,7 +11,7 @@ function PlayGame(){
     const [step, setStep] = useState(0);
 
     function handleLetterClick(letter){
-        if(state.word.toUpperCase().includes(letter)) {
+        if(state?.word?.toUpperCase().includes(letter)) {
             console.log("correct");
         } else {
             console.log("wrong");
@@ -24,15 +24,19 @@ function PlayGame(){
     return (
         <>
             <h1> Play Game </h1>
-            <MaskedText text={state.word} guessedLetters={guessedLetters}/>
-
-            <div >
-            <LetterButtons text={state.word} guessedLetters={guessedLetters} onLetterClick={handleLetterClick}/>
-            </div>
-            <div>
-                <HangMan step={step}/>
-            </div>
-
+            {state?.word && (
+                <>
+                    <MaskedText text={state.word} guessedLetters={guessedLetters}/>
+                    <div >
+                    <LetterButtons text={state.word} guessedLetters={guessedLetters} onLetterClick={handleLetterClick}/>
+                    </div>
+                    <div>
+                        <HangMan step={step}/>
+                    </div>
+                </>
+              )}
+            
+            <Link to='/'>HOME</Link>
             <Link to='/start' className="text-blue-500 hover:text-blue-700">Start Game</Link>
         </>
     )
